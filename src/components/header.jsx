@@ -25,9 +25,10 @@ const Header = () => {
           </Link>
           {/* search */}
           <input type="text" className="w-[400px] px-6 py-3 outline-none rounded-full bg-neutral-800 text-neutral-100 placeholder:text-neutral-400 max-md:hidden" placeholder="Поиск" />
-          <button className="max-md:hidden">
-            <div className="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center text-2xl">+</div>
-          </button>
+          <div className="flex items-center space-x-6 whitespace-nowrap max-md:hidden">
+            <Link className="font-medium py-3 px-3">Sign in</Link>
+            <Link className="font-medium py-3 px-3 bg-neutral-100 rounded-full text-neutral-950 outline outline-1 outline-neutral-100 duration-300 hover:bg-transparent hover:text-neutral-100">Sign up</Link>
+          </div>
           <div className={`flex-1 justify-end hidden max-md:flex duration-200 ${searchIsOpen ? 'opacity-0' : ''}`}>
             <button onClick={openSearch} className="px-4 py-3">
               ?
@@ -35,7 +36,7 @@ const Header = () => {
           </div>
           {/* search input */}
           <div className={`absolute flex items-center z-10 w-full duration-500 ${searchIsOpen ? 'scale-100 -translate-y-0 opacity-100' : 'opacity-0 -translate-y-[100px] scale-0'}`}>
-            <input ref={inputRef} type="text" className={`w-full bg-neutral-800 rounded-full outline-none px-6 py-3 pr-14`} />
+            <input ref={inputRef} type="text" className={`w-full bg-neutral-800 rounded-full outline-none px-6 py-3 pr-14 placeholder:text-neutral-400`} placeholder="Поиск" />
             <button onClick={openSearch} className="absolute w-6 h-6 right-6">
               <div className="absolute bg-neutral-100 w-full h-0.5 rotate-45"></div>
               <div className="absolute bg-neutral-100 w-full h-0.5 -rotate-45"></div>
